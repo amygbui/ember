@@ -1,7 +1,8 @@
+<h2>Labels</h2>
+<ul>
 {{#each model as |label|}}
-<div class="">
-  Label: {{#link-to 'labels.show' label.id}}
-           {{label.name}}
-         {{/link-to}}
-</div>
+{{#link-to 'labels.show' label.id}}
+  <li>{{label.name}}</li>
+{{/link-to}}
 {{/each}}
+</ul>
