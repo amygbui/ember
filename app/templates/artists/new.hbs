@@ -1,0 +1,8 @@
+<h2>Add Artist</h2>
+<form class="" method="post" {{action "addArtist" on="submit"}}>
+  Name: {{input type="text" value=artist.name}}
+  Label: <select name="labels">
+    <option value="">Album here</option>
+  </select>
+  {{input type="submit" value="Add Artist"}}
+</form>

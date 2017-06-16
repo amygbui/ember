@@ -1,10 +1,7 @@
 <h2>{{model.name}}</h2>
-<button {{action 'deleteLabel' model}}>Delete</button>
+<button {{action 'deleteLabel' model}}>Delete Label</button>
 
-<br />{{#link-to 'labels.edit' model.id}}
-Edit
-{{/link-to}}
-
+{{#link-to 'labels.edit' model.id}}Edit{{/link-to}}
 <br /><br />
 <ul>
   {{#each model.artists as |artist|}}
