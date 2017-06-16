@@ -7,7 +7,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('labels');
+  this.route('labels', function() {
+    this.route('show', { path: '/:label_id' });
+    this.route('add');
+  });
 });
 
 export default Router;

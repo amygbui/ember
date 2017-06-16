@@ -1,14 +1,10 @@
-<h2>Label</h2>
-
-{{#each model as |label|}}
-<div class="">
-  Label: {{label.name}}
-  <!-- <button {{action "deleteLabel" label.id}}>Delete</button> -->
-</div>
-{{/each}}
+<h2>Labels</h2>
+{{#link-to "labels.index"}}
+  All
+{{/link-to}}
+{{#link-to "labels.add"}}
+  Add
+{{/link-to}}
 
 <br /><br />
-<form class="" method="post" {{action "addLabel" on="submit"}}>
-  Name: {{input type="text" value=model.name}}
-  {{input type="submit" value="Add Label"}}
-</form>
+{{outlet}}
