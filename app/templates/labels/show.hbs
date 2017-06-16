@@ -5,4 +5,13 @@
 Edit
 {{/link-to}}
 
+<br /><br />
+<ul>
+  {{#each model.artists as |artist|}}
+    <li>{{#link-to 'artist.show' artist}}
+          {{artist.name}}
+        {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
 {{outlet}}
