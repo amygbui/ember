@@ -1,3 +1,8 @@
 <h2>{{model.name}}</h2>
 <button {{action 'deleteLabel' model}}>Delete</button>
+
+<br />{{#link-to 'labels.edit' model.id}}
+Edit
+{{/link-to}}
+
 {{outlet}}

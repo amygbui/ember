@@ -1,5 +1,7 @@
 {{#each model as |label|}}
 <div class="">
-  Label: {{label.name}}
+  Label: {{#link-to 'labels.show' label.id}}
+           {{label.name}}
+         {{/link-to}}
 </div>
 {{/each}}
