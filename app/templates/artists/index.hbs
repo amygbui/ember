@@ -1,0 +1,8 @@
+<h2>Labels</h2>
+<ul>
+{{#each model as |artist|}}
+{{#link-to 'artists.show' artist.id}}
+  <li>{{artist.name}}</li>
+{{/link-to}}
+{{/each}}
+</ul>

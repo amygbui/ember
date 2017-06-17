@@ -1,0 +1,8 @@
+<h2>Songs</h2>
+<ul>
+{{#each model as |song|}}
+{{#link-to 'songs.show' song.id}}
+  <li>{{song.title}}</li>
+{{/link-to}}
+{{/each}}
+</ul>

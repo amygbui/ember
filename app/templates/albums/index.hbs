@@ -1,0 +1,8 @@
+<h2>Albums</h2>
+<ul>
+{{#each model as |album|}}
+{{#link-to 'albums.show' album.id}}
+  <li>{{album.title}}</li>
+{{/link-to}}
+{{/each}}
+</ul>
