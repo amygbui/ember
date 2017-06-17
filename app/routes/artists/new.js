@@ -10,7 +10,7 @@ export default Ember.Route.extend({
         name: this.get('controller.model.name')
       })
       this.set('controller.model.name', '')
-      this.store.findRecord('label', this.get('controller.model.label'))
+      this.store.findRecord('label', this.get('controller.model.label_id'))
                       .then(label => {
                         newArtist.save();
                         label.get('artists').pushObject(newArtist);

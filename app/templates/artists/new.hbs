@@ -2,7 +2,7 @@
 <form method="post" {{action "addArtist" on="submit"}}>
   Name: {{input type="text" value=model.name}}
   Label:
-  <select onchange={{action 'updateValue' value="target.value"}} value="target.value" >
+  <select onchange={{action 'updateValue' value="target.value"}} value="target.value">
     <option value="">-- Please Select-- </option>
     {{#each model as |label|}}
       <option value={{label.id}}>{{label.name}}</option>

@@ -1,0 +1,13 @@
+<h2>Edit Artist</h2>
+<form method="post" {{action "updateArtist" model.artist on="submit"}}>
+  Name: {{input type="text" value=model.artist.name}}
+  Label:
+  <select onchange={{action 'updateValue' value="target.value"}} value="target.value">
+    <option value=model.artist.label>{{model.artist.label.name}}</option>
+    <option value="">-- Please Select--</option>
+    {{#each model.labels as |label|}}
+      <option value={{label.id}}>{{label.name}}</option>
+    {{/each}}
+  </select>
+  {{input type="submit" value="Update Artist"}}
+</form>
