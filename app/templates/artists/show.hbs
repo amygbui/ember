@@ -1,4 +1,5 @@
 <h2>{{model.name}}</h2>
+<button {{action 'deleteArtist' model}}>Delete Artist</button>
 Label: {{#link-to 'labels.show' model.label.id}}
          {{model.label.name}}
        {{/link-to}}
