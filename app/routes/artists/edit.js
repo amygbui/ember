@@ -14,13 +14,11 @@ export default Ember.Route.extend({
           if (artist.get('newLabel')) {
             this.store.findRecord('label', artist.get('newLabel'))
             .then(label => {
-              artist.set('label', label)
-              artist.save();
+              artist.set('label', label);
               label.save();
             })
-          } else {
-            artist.save();
           }
+          artist.save();
         })
         .then(() => this.transitionTo('artists.show', model.get('id')));
     }
