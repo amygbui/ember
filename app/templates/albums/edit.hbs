@@ -1,0 +1,13 @@
+<h2>Edit Album</h2>
+<form method="post" {{action "updateAlbum" model.album on="submit"}}>
+  Title: {{input type="text" value=model.album.title}}
+  Artist:
+  <select onchange={{action 'updateValue' value="target.value"}} value="target.value">
+    <option value={{model.album.artist}}>{{model.album.artist.name}}</option>
+    <option value="">-- Please Select--</option>
+    {{#each model.artists as |artist|}}
+      <option value={{artist.id}}>{{artist.name}}</option>
+    {{/each}}
+  </select>
+  {{input type="submit" value="Update Album"}}
+</form>

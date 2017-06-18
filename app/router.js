@@ -22,6 +22,7 @@ Router.map(function() {
   this.route('albums', function() {
     this.route('show', { path: '/:album_id' });
     this.route('new');
+    this.route('edit', { path: 'edit/:album_id' });
   });
 
   this.route('songs', function() {
