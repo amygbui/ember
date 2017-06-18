@@ -1,5 +1,9 @@
 <h2>{{model.title}}</h2>
-by {{model.artist.name}}
+by {{#link-to 'artists.show' model.artist.id}}
+     {{model.artist.name}}
+   {{/link-to}}
+<br />
+<button {{action 'deleteAlbum' model}}>Delete Album</button>
 <ul>
 {{#each model.songs as |song|}}
   <li>
