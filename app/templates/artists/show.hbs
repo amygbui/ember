@@ -1,14 +1,14 @@
 <h2>{{model.name}}</h2>
+Label: {{#link-to 'labels.show' model.label.id}}
+{{model.label.name}}
+{{/link-to}}
+<br />
+
 <button {{action 'deleteArtist' model}}>Delete Artist</button>
 {{#link-to 'artists.edit' model.id}}
 Edit
 {{/link-to}}
 
-
-<br /><br />
-Label: {{#link-to 'labels.show' model.label.id}}
-         {{model.label.name}}
-       {{/link-to}}
 <br /><br />
 Albums
 <ul>

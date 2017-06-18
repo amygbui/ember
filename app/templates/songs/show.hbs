@@ -1,2 +1,12 @@
 <h2>{{model.title}}</h2>
-{{outlet}}
+Album: {{#link-to 'albums.show' model.album.id}}
+         {{model.album.title}}
+       {{/link-to}}<br />
+By: {{#link-to 'artists.show' model.album.artist.id}}
+      {{model.album.artist.name}}
+    {{/link-to}}<br />
+Label: {{#link-to 'labels.show' model.album.artist.label.id}}
+         {{model.album.artist.label.name}}
+       {{/link-to}}<br />
+
+<button {{action 'deleteSong' model}}>Delete Song</button>
