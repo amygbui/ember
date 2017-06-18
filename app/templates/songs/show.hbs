@@ -10,3 +10,4 @@ Label: {{#link-to 'labels.show' model.album.artist.label.id}}
        {{/link-to}}<br />
 
 <button {{action 'deleteSong' model}}>Delete Song</button>
+{{#link-to 'songs.edit' model.id}}Edit{{/link-to}}

@@ -28,6 +28,7 @@ Router.map(function() {
   this.route('songs', function() {
     this.route('show', { path: '/:song_id' });
     this.route('new');
+    this.route('edit', { path: 'edit/:song_id' });
   });
 });
 

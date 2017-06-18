@@ -12,7 +12,7 @@ export default Ember.Route.extend({
       this.store.findRecord('album', model.get('id'))
         .then(album => {
           if (album.get('newArtist')) {
-            this.store.findRecord('artist', album.get('newArtist'))
+            this.store.findRecord('artist', model.get('newArtist'))
               .then(artist => {
                 album.set('artist', artist);
                 artist.save();
@@ -20,7 +20,7 @@ export default Ember.Route.extend({
           }
           album.save();
         })
-        .then(() => this.transitionTo('albums.show', model.get('id')))
+        .then(() => this.transitionTo('albums.show', model.get('id')));
     }
   }
 });
