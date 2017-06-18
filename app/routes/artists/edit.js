@@ -11,12 +11,16 @@ export default Ember.Route.extend({
     updateArtist(model) {
       this.store.findRecord('artist', model.get('id'))
         .then(artist => {
-          this.store.findRecord('label', artist.get('newLabel'))
+          if (artist.get('newLabel')) {
+            this.store.findRecord('label', artist.get('newLabel'))
             .then(label => {
               artist.set('label', label)
               artist.save();
               label.save();
             })
+          } else {
+            artist.save();
+          }
         })
         .then(() => this.transitionTo('artists.show', model.get('id')));
     }
