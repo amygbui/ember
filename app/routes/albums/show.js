@@ -10,6 +10,7 @@ export default Ember.Route.extend({
         .then(artist => {
           artist.get('albums').removeObject(model);
           artist.save();
+          model.get('songs').invoke('destroyRecord');
           model.destroyRecord();
           this.transitionTo('artists.show', artist.get('id'))
         })
