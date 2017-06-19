@@ -6,8 +6,7 @@ Label: {{#link-to 'labels.show' model.artist.label.id}}
          {{model.artist.label.name}}
        {{/link-to}}
 <br />
-<button {{action 'deleteAlbum' model}}>Delete Album</button>
-{{#link-to 'albums.edit' model.id}}Edit{{/link-to}}
+Songs:
 <ul>
 {{#each model.songs as |song|}}
   <li>
@@ -17,3 +16,7 @@ Label: {{#link-to 'labels.show' model.artist.label.id}}
   </li>
 {{/each}}
 </ul>
+
+<br />
+<button>{{#link-to 'albums.edit' model.id}}Edit{{/link-to}}</button>
+<button {{action 'deleteAlbum' model}}>Delete Album</button>

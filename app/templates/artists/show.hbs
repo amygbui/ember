@@ -3,14 +3,7 @@ Label: {{#link-to 'labels.show' model.label.id}}
 {{model.label.name}}
 {{/link-to}}
 <br />
-
-<button {{action 'deleteArtist' model}}>Delete Artist</button>
-{{#link-to 'artists.edit' model.id}}
-Edit
-{{/link-to}}
-
-<br /><br />
-Albums
+Albums:
 <ul>
   {{#each model.albums as |album|}}
     <li>
@@ -20,4 +13,7 @@ Albums
     </li>
   {{/each}}
 </ul>
-{{outlet}}
+
+<br />
+<button>{{#link-to 'artists.edit' model.id}}Edit{{/link-to}}</button>
+<button {{action 'deleteArtist' model}}>Delete Artist</button>
