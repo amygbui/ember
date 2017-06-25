@@ -14,7 +14,7 @@ export default Ember.Route.extend({
           this.store.findRecord('album', song.get('newAlbum'))
             .then(newAlbum => {
               song.set('album', newAlbum);
-              
+
               if (oldAlbum) {
                 oldAlbum.save();
               }
@@ -26,19 +26,6 @@ export default Ember.Route.extend({
       } else {
         song.save();
       }
-
-      // this.store.findRecord('song', model.get('id'))
-      //   .then(song => {
-      //     if (song.get('newAlbum')) {
-      //       this.store.findRecord('album', song.get('newAlbum'))
-      //         .then(album => {
-      //           song.set('album', album);
-      //           album.save();
-      //         })
-      //     }
-      //     song.save();
-      //   })
-      //   .then(() => this.transitionTo('songs.show', model.get('id')));
     }
   }
 });

@@ -30,19 +30,6 @@ export default Ember.Route.extend({
       } else {
         artist.save();
       }
-      // this.store.findRecord('artist', model.get('id'))
-      //   .then(artist => {
-      //     artist.save();
-      //     if (artist.get('newLabel')) {
-      //       this.store.findRecord('label', artist.get('newLabel'))
-      //       .then(label => {
-      //         // label.get('artists').pushObject(artist);
-      //         artist.set('label', label);
-      //         label.save();
-      //       })
-      //     }
-      //   })
-      //   .then(() => this.transitionTo('artists.show', model.get('id')));
     }
   }
 });

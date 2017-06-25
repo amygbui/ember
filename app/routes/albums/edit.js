@@ -5,11 +5,7 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       album: this.store.findRecord('album', params.album_id),
       artists: this.store.findAll('artist')
-    })
-    // return {
-    //   album: this.store.findRecord('album', params.album_id),
-    //   artists: this.store.findAll('artist')
-    // }
+    });
   },
   actions: {
     updateAlbum(album) {
@@ -30,18 +26,6 @@ export default Ember.Route.extend({
       } else {
         album.save();
       }
-      // this.store.findRecord('album', model.get('id'))
-      //   .then(album => {
-      //     if (album.get('newArtist')) {
-      //       this.store.findRecord('artist', model.get('newArtist'))
-      //         .then(artist => {
-      //           album.set('artist', artist);
-      //           artist.save();
-      //         })
-      //     }
-      //     album.save();
-      //   })
-      //   .then(() => this.transitionTo('albums.show', model.get('id')));
     }
   }
 });
