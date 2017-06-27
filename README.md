@@ -1,50 +1,44 @@
-# ember-code-challenge
+# FuturesMedia Coding Challenge
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
-
-## Prerequisites
-
-You will need the following things properly installed on your computer.
-
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with NPM)
-* [Ember CLI](https://ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
-
-## Installation
-
-* `git clone <repository-url>` this repository
-* `cd ember-code-challenge`
-* `npm install`
+The purpose of this coding challenge is to build a simple CRUD app using Ember. Instead of having a back-end, local storage is used to mock the database. This app is also styled using Bootstrap Sass.
 
 ## Running / Development
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+* CD into the app directory and type `ember serve` into the command line
+* Visit the app at [http://localhost:4200](http://localhost:4200).
 
-### Code Generators
+## Features and Implementation
 
-Make use of the many generators for code, try `ember help generate` for more details
+This app is a song app containing Labels, Artists, Albums, and Songs. An artist belongs to one label and can have many albums. An album can belong to one artist, and have many songs.
 
-### Running Tests
+### Labels
+Column          | Data Type | Details
+--------------- | --------- | -------
+id              | integer   | not null, primary key
+name            | string    | not null
 
-* `ember test`
-* `ember test --server`
+Labels can have many artists, and by extension, many albums and songs.
 
-### Building
+### Artists
+Column          | Data Type | Details
+--------------- | --------- | -------
+id              | integer   | not null, primary key
+name            | string    | not null
 
-* `ember build` (development)
-* `ember build --environment production` (production)
+Artists can belong to one label, and can have many albums. By extension, they can have many songs through the albums.
 
-### Deploying
+### Albums
+Column          | Data Type | Details
+--------------- | --------- | -------
+id              | integer   | not null, primary key
+title           | string    | not null
 
-Specify what it takes to deploy your app.
+Albums can belong to one artist, and by extension, only one label. They can have many songs.
 
-## Further Reading / Useful Links
+### Songs
+Column          | Data Type | Details
+--------------- | --------- | -------
+id              | integer   | not null, primary key
+title           | string    | not null
 
-* [ember.js](http://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+A song can belong to one album. By extension, a song can thus belong to one artist and one album.
