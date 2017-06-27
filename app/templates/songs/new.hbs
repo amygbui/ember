@@ -1,7 +1,7 @@
 <h2>Add Song</h2>
 <form method="post" {{action "addSong" on="submit"}}>
   Title: {{input type="text" value=model.name}}
-  Label:
+  Album:
   <select onchange={{action 'updateValue' value="target.value"}} value="target.value">
     <option value="">-- Please Select --</option>
     {{#each model as |album|}}

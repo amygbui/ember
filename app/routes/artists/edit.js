@@ -5,11 +5,7 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       artist: this.store.findRecord('artist', params.artist_id),
       labels: this.store.findAll('label')
-    })
-    // return {
-    //   labels: this.store.findAll('label'),
-    //   artist: this.store.findRecord('artist', params.artist_id)
-    // };
+    });
   },
   actions: {
     updateArtist(artist) {
