@@ -9,7 +9,7 @@ The purpose of this coding challenge is to build a simple CRUD app using Ember. 
 
 ## Features and Implementation
 
-This app is a song app containing Labels, Artists, Albums, and Songs. An artist belongs to one label and can have many albums. An album can belong to one artist, and have many songs.
+This app is a song app containing Labels, Artists, Albums, and Songs. Users are able to add, edit, and delete Labels, Artists, Albums, and Songs. Users are also able to go to each model's show page and see its relevant details.
 
 ### Labels
 Column          | Data Type | Details
